@@ -4,7 +4,7 @@ import time
 
 from pathlib import Path
 
-PATH_TXT = "Projetos\etl-1-bilhao-linhas\data\measurements.txt"
+PATH_TXT = "Projetos\etl-1-milhao-linhas\data\measurements.txt"
 
 def processar_temperaturas(path_txt: Path):
     print ("Iniciando o processamento do arquivo.")
@@ -29,7 +29,7 @@ def processar_temperaturas(path_txt: Path):
         max_temp = max(temperature)
         results[station] = (min_temp, mean_temp, max_temp)
 
-    print("Estística calculada. Ordenando...")
+    print("Estatística calculada. Ordenando...")
     # Ordenando os resultados pelo nome da estação
     sorted_results = dict(sorted(results.items()))
 
@@ -41,5 +41,5 @@ def processar_temperaturas(path_txt: Path):
     return formatted_results
 
 if __name__ == "__main__":
-    PATH_TXT: Path = Path("data/measurements.txt")
+    PATH_TXT: Path = Path(PATH_TXT)
     resultados = processar_temperaturas(PATH_TXT)
