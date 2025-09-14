@@ -1,4 +1,8 @@
 import pandas as pd
+from multiprocessing import Pool, cpu_count
+from tqdm import tqdm
+
+CONCURRENCY = cpu_count()
 
 df = pd.read_csv("Projetos\etl-1-milhao-linhas\data\measurements.txt",
                  sep=";",
